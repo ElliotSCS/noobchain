@@ -10,19 +10,17 @@ public class NoobChain {
     public static void main(String[] args) {
         BlockConstructor constructor = new BlockConstructor();
 
-        Block genesisBlock = constructor.constructBlock(
-                Data.getFileContentsAsString("SampleJson"));
-        genesisBlock.setHash();
-        blockchain.add(genesisBlock);
-
+        blockchain.add(constructor.constructBlock(
+                Data.getFileContentsAsString("SampleJson")));
+        System.out.println("Trying to Mine block 1...");
         blockchain.get(0).mineBlock(difficulty);
 
-        /*blockchain.add(new Block("Yo im the second block",
-                blockchain.get(blockchain.size()-1).getHash()));
+        blockchain.add(constructor.constructBlock(
+                Data.getFileContentsAsString("SupplierJsonExample")));
         System.out.println("Trying to Mine block 2... ");
         blockchain.get(1).mineBlock(difficulty);
 
-        blockchain.add(new Block("Cool kid third block",
+        /*blockchain.add(new Block("Cool kid third block",
                 blockchain.get(blockchain.size()-1).getHash()));
         System.out.println("Trying to Mine block 3... ");
         blockchain.get(2).mineBlock(difficulty);*/
