@@ -1,6 +1,5 @@
 {
   "typeCode": "0T",
-  "previousHash": "0",
-  "truckId": "01",
+  "truckID": "01",
   "contentsOfShipment": "food"
 }
