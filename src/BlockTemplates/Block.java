@@ -1,3 +1,5 @@
+package BlockTemplates;
+
 public interface Block {
     String getHash();
 
@@ -8,4 +10,6 @@ public interface Block {
     void mineBlock(int difficulty);
 
     String calculateHash();
+
+    boolean equals(Object other);
 }

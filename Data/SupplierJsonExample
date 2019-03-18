@@ -1,6 +1,6 @@
 {
   "typeCode": "0S",
-  "supplierID": "myID",
-  "itemSupplied": "blockchain prototypes",
-  "numberOfItem": 1
+  "supplierID": "Lettuce Supplier",
+  "itemSupplied": "romaine hearts",
+  "numberOfItem": 100
 }

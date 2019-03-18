@@ -1,2 +1,4 @@
 To-Do List:
-    Add more samples
+    -Implement Tree approach
+        Make the validator work on trees
+        Just add supply chains in original order to the supply requests

@@ -1,26 +1,32 @@
+import Structure.Blockchain;
+import Structure.BlockchainValidator;
+import Structure.TreeChain;
+import Structure.TreeNode;
 import com.google.gson.GsonBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class NoobChain {
-    public static List<Block> blockchain = new ArrayList<>();
-    public static int difficulty = 3;
+    public static int difficulty = 4;
 
     public static void main(String[] args) {
-        BlockConstructor constructor = new BlockConstructor();
+        TreeChain salad = new TreeChain("Product Example");
+        salad.addNode(salad.getRoot(), "ProducerRequestExample");
+        TreeNode found = salad.findNode("ProducerRequestExample");
+        System.out.println("findNode works: " + (found != null));
 
-        blockchain.add(constructor.constructBlock(blockchain, "SampleJson"));
-        System.out.println("Trying to Mine block 1...");
-        blockchain.get(0).mineBlock(difficulty);
+        Blockchain exampleSupplyChain = new Blockchain();
 
-        blockchain.add(constructor.constructBlock(blockchain, "SupplierJsonExample"));
-        System.out.println("Trying to Mine block 2... ");
-        blockchain.get(1).mineBlock(difficulty);
+        exampleSupplyChain.add("SupplierJsonExample");
+        exampleSupplyChain.add("FirstTransportExample");
+        exampleSupplyChain.add("SecondTransportExample");
 
-        System.out.println("\nBlockchain is Valid: " + BlockchainValidator.isChainValid(blockchain));
+        System.out.println("\nBlockchain is Valid: " + BlockchainValidator.isChainValid(exampleSupplyChain));
 
-        String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+        String blockchainJson = new GsonBuilder().setPrettyPrinting()
+                .create().toJson(exampleSupplyChain.getBlockchain());
         System.out.println(blockchainJson);
+
+        //Block Mining as proof of work
+        //System.out.println("Trying to Mine block 2... ");
+        //exampleSupplyChain.getBlockchain().get(1).mineBlock(difficulty);
     }
 }

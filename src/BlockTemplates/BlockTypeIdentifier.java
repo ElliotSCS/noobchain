@@ -1,3 +1,5 @@
+package BlockTemplates;
+
 public class BlockTypeIdentifier {
     private String typeCode;
 
